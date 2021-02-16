@@ -26,6 +26,11 @@ public class FormActivity extends AppCompatActivity {
                 EditText passwordConfirm = (EditText)(findViewById(R.id.userInput_PasswordConfirm));
                 if(isEmpty(name) || isEmpty(email) || isEmpty(password) || isEmpty(passwordConfirm)) {
                     Toast.makeText(FormActivity.this, "Fill in all fields", Toast.LENGTH_LONG).show();
+                }else if (password.getText().toString().equals(passwordConfirm.getText().toString())){
+                    String greetingName = name.getText().toString();
+                    Toast.makeText(FormActivity.this, "Welcome, " + greetingName + " to the SingUpForm", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(FormActivity.this, "Password does not match, check again", Toast.LENGTH_LONG).show();
                 }
             }
 
